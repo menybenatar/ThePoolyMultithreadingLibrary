@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         ThreadsPool pool = new ThreadsPool(5); // Create a thread pool with 3 threads
         List<Task> tasks = new ArrayList<>();
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 100; i++) {
             Random random = new Random();
             Task task = new ExampleTask("Task " + i, i);
             tasks.add(task);
