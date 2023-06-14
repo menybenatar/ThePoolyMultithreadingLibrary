@@ -1,5 +1,6 @@
 package il.ac.hit.pooly;
 
+import java.util.List;
 import java.util.concurrent.*;
 
 /**
@@ -15,14 +16,20 @@ public class ThreadsPool {
      * @param numThreads the number of threads in the pool
      */
     public ThreadsPool(int numThreads) {
-        this.setNumThreads(numThreads);
-        tpe = new CustomThreadPoolExecutor(
-                getNumThreads(), // core pool size
-                getNumThreads(), // maximum pool size
-                1, // keep alive time
-                TimeUnit.SECONDS, // keep alive time unit
-                new PriorityBlockingQueue<>() // priority queue for tasks
-        );
+        try {
+            this.setNumThreads(numThreads);
+            tpe = new CustomThreadPoolExecutor(
+                    getNumThreads(), // core pool size
+                    getNumThreads(), // maximum pool size
+                    1, // keep alive time
+                    TimeUnit.SECONDS, // keep alive time unit
+                    new PriorityBlockingQueue<>() // priority queue for tasks
+            );
+        }
+        catch (Exception e){
+           throw e;
+        }
+
     }
 
     /**
@@ -53,6 +60,12 @@ public class ThreadsPool {
      */
     public void submit(Task task) {
         tpe.execute(task);
+    }
+    public void shutdown() {
+        tpe.shutdown();
+    }
+    public boolean awaitTermination(long timout) throws InterruptedException {
+        return tpe.awaitTermination(timout, TimeUnit.MILLISECONDS);
     }
 
     @Override

@@ -21,7 +21,7 @@ public interface Task extends Runnable, Comparable<Task> {
      *
      * @return the priority level of the task
      */
-    public  abstract int getPriority();
+    public abstract int getPriority();
 
     @Override
     default void run() {
