@@ -37,7 +37,9 @@ public interface Task extends Runnable, Comparable<Task> {
      * This method is implemented from the Comparable interface.
      *
      * @param that the task to compare with
-     * @return a negative integer, zero, or a positive integer if this task's priority is less than, equal to, or greater than the specified task's priority
+     * @return a negative integer, zero,
+     * or a positive integer if this task's priority is less than,
+     * equal to, or greater than the specified task's priority
      */
     @Override
     default int compareTo(Task that) {

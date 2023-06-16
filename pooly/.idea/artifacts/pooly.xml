@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="pooly">
+    <output-path>$PROJECT_DIR$/out/artifacts/pooly</output-path>
+    <root id="archive" name="pooly.jar">
+      <element id="module-output" name="pooly" />
+      <element id="library" level="project" name="junit" />
+      <element id="extracted-dir" path="$APPLICATION_HOME_DIR$/lib/junit4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$APPLICATION_HOME_DIR$/lib/junit.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

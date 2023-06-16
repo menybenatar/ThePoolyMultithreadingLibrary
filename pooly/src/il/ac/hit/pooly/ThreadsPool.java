@@ -88,9 +88,6 @@ public class ThreadsPool {
      */
     @Override
     public String toString() {
-        return "ThreadsPool {" +
-                "numThreads=" + numThreads +
-                ", tpe=" + tpe +
-                '}';
+        return "ThreadsPool {" + "numThreads=" + numThreads + ", tpe=" + tpe + '}';
     }
 }
